@@ -26,7 +26,7 @@ git commit
 ## 1️⃣ 기계 검증 (Lint Script)
 
 ### 개요
-Python 스크립트로 자동 검증:
+자동 검증 (TypeScript 또는 Python):
 - Frontmatter YAML 유효성
 - 파일 구조 규칙 (경로, 폴더명)
 - 파일명 규칙 (kebab-case)
@@ -34,7 +34,16 @@ Python 스크립트로 자동 검증:
 
 ### 실행 방법
 
-#### 명령줄에서 직접 실행
+#### TypeScript 버전 (권장)
+```bash
+# npm 스크립트 사용 (프로젝트 루트에서)
+npm run lint
+
+# 또는 직접 실행
+npx tsx scripts/lint.ts
+```
+
+#### Python 버전 (대체)
 ```bash
 # 프로젝트 루트에서
 python scripts/lint.py
@@ -45,6 +54,8 @@ python scripts/lint.py D:\HarnessWiki
 
 #### Claude Code에서 실행
 ```bash
+! npm run lint
+! npx tsx scripts/lint.ts
 ! python scripts/lint.py
 ```
 
@@ -293,18 +304,44 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 - **주 1회**: 전체 위키 lint 스캔 (누적 오류 방지)
 
 ### 성능 팁
-- lint는 ~1초 (빠름)
-- content-review는 ~2-5분 (회의 복잡도에 따라)
+- TypeScript lint: ~1-2초 (npm 시작 오버헤드 포함)
+- Python lint: ~0.5초 (가장 빠름)
+- content-review: ~2-5분 (회의 복잡도에 따라)
 - 병렬 실행 불가 (순차 실행 권장)
 
+### TypeScript vs Python 선택
+| 항목 | TypeScript | Python |
+|------|-----------|--------|
+| 설정 | npm install 필요 | pyyaml만 설치 |
+| 속도 | ~1-2초 | ~0.5초 |
+| 장점 | Node.js 생태계, 타입 안전 | 가볍고 빠름 |
+| 선택 | CI/CD 통합할 때 | 로컬에서만 실행할 때 |
+
 ### 자동화 옵션
-hooks를 사용하여 ingest 직후 자동으로 lint 실행:
+
+#### Claude Code 스크립트 자동화 (권장)
+`.claude/hooks/` 또는 settings.json에 설정:
 ```json
 {
   "hooks": {
-    "after-ingest": "python scripts/lint.py"
+    "after-ingest": "npm run lint"
   }
 }
+```
+
+#### npm watch 모드
+파일 변경 감지 시 자동 검증:
+```bash
+npm run lint:watch
+```
+
+#### 컴파일 및 배포
+```bash
+# TypeScript를 JavaScript로 컴파일
+npm run lint:build
+
+# 생성된 dist/ 폴더에서 실행
+node dist/scripts/lint.js
 ```
 
 ---
