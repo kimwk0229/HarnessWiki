@@ -9,7 +9,7 @@ HarnessWiki의 완전한 문서는 다음 위치에 있습니다:
 
 | 문서 | 설명 | 대상 |
 |------|------|------|
-| **[AGENTS.md](AGENTS.md)** | 전체 스키마, 3가지 오퍼레이션, 규칙 | 모든 협업자 (인간 & AI) |
+| **[AGENTS.md](AGENTS.md)** | 전체 스키마, 4가지 오퍼레이션, 규칙 | 모든 협업자 (인간 & AI) |
 | **[index.md](wiki/index.md)** | 위키 카탈로그 및 롤업 페이지 링크 | 사용자 |
 | **[log.md](log.md)** | 변경 이력 (`[INGEST]`, `[QUERY]`, `[LINT]` 태그) | 모든 협업자 |
 
@@ -31,6 +31,12 @@ HarnessWiki의 완전한 문서는 다음 위치에 있습니다:
 
 ```
 [AGENTS.md](AGENTS.md) → "오퍼레이션 3: 린트 (Lint)" 섹션
+```
+
+### 위키 통합 검증 (Validation)
+
+```
+[AGENTS.md](AGENTS.md) → "오퍼레이션 4: 검증 (Validation)" 섹션
 ```
 
 ## 이전 지원
