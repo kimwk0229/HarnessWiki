@@ -3,7 +3,7 @@ name: ingest-harnesswiki
 description: >
   HarnessWiki의 회의록 수집(ingest) 전체 프로세스를 자동화합니다. 새 회의 메모/전사본을 받으면:
   (1) raw/에 원본 저장 (write-once), (2) 주제 페이지 매칭 및 생성, (3) 주제 페이지에 정보 누적,
-  (4) 모순 처리 (변경이력 추적), (5) decisions.md 갱신, (6) action-items.md 갱신,
+  (4) 모순 처리 (변경이력 추적), (5) 결정.md 갱신, (6) 액션아이템.md 갱신,
   (7) 모든 링크 검증, (8) log.md 기록, (9) 결과 보고.
   사용자가 회의 메모나 STT 전사본을 제공할 때마다 이 스킬을 사용하세요.
   CLAUDE.md의 "오퍼레이션 1: 수집" 9단계를 완전 자동화합니다.
@@ -32,8 +32,8 @@ CLAUDE.md의 "오퍼레이션 1: 수집"에 정의된 9단계를 모두 실행�
   - raw/YYYY-MM-DD_슬러그/raw.md (원본)
   - raw/YYYY-MM-DD_슬러그/meta.md (메타카드)
   - wiki/topics/슬러그/슬러그.md (신규 토픽 또는 기존 갱신)
-  - wiki/decisions/decisions.md (갱신)
-  - wiki/action-items/action-items.md (갱신)
+  - wiki/결정/결정.md (갱신)
+  - wiki/액션아이템/액션아이템.md (갱신)
   - wiki/index.md (신규 토픽 시)
   - log.md (기록)
 
@@ -124,7 +124,7 @@ CLAUDE.md의 "오퍼레이션 1: 수집"에 정의된 9단계를 모두 실행�
   ```
 
 ### 5단계: 결정사항 롤업
-새 결정사항을 `wiki/decisions/decisions.md`에 반영합니다.
+새 결정사항을 `wiki/결정/결정.md`에 반영합니다.
 
 **형식**:
 ```markdown
@@ -134,10 +134,10 @@ CLAUDE.md의 "오퍼레이션 1: 수집"에 정의된 9단계를 모두 실행�
 - [결정2](../topics/다른주제/다른주제.md)
 ```
 
-**rule**: ingest 후 decisions.md 갱신 누락 시 SSOT 깨짐. 필수.
+**rule**: ingest 후 결정.md 갱신 누락 시 SSOT 깨짐. 필수.
 
 ### 6단계: 액션아이템 롤업
-새 액션아이템을 `wiki/action-items/action-items.md`에 체크박스 형태로 추가합니다.
+새 액션아이템을 `wiki/액션아이템/액션아이템.md`에 체크박스 형태로 추가합니다.
 
 **형식**:
 ```markdown
@@ -146,7 +146,7 @@ CLAUDE.md의 "오퍼레이션 1: 수집"에 정의된 9단계를 모두 실행�
 - [ ] 액션 내용 (담당자, 기한 if 있으면 자유 형식) — 출처: [회의 메타](../../raw/2026-08-10_슬러그/meta.md)
 ```
 
-**rule**: ingest 후 action-items.md 갱신 누락 시 SSOT 깨짐. 필수.
+**rule**: ingest 후 액션아이템.md 갱신 누락 시 SSOT 깨짐. 필수.
 
 ### 7단계: 링크 유효성 검증
 신규 추가한 모든 링크가 실제 파일을 가리키는지 확인합니다.
