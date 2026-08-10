@@ -228,17 +228,17 @@ class WikiLinter {
   }
 
   private validateTopicStructure(): void {
-    const topicsDir = path.join(this.wikiRoot, 'wiki', 'topics');
+    const 주제Dir = path.join(this.wikiRoot, 'wiki', '주제');
 
-    if (!fs.existsSync(topicsDir)) {
-      this.logWarning('wiki/topics/', '디렉토리가 없음');
+    if (!fs.existsSync(주제Dir)) {
+      this.logWarning('wiki/주제/', '디렉토리가 없음');
       return;
     }
 
-    const folders = fs.readdirSync(topicsDir);
+    const folders = fs.readdirSync(주제Dir);
 
     for (const folder of folders) {
-      const folderPath = path.join(topicsDir, folder);
+      const folderPath = path.join(주제Dir, folder);
 
       if (!fs.statSync(folderPath).isDirectory()) {
         continue;
@@ -246,14 +246,14 @@ class WikiLinter {
 
       const slug = folder;
       if (!this.isKebabCase(slug)) {
-        this.logError(`wiki/topics/${slug}`, '슬러그가 kebab-case 아님');
+        this.logError(`wiki/주제/${slug}`, '슬러그가 kebab-case 아님');
       }
 
-      // 폴더 노트 구조 검증: wiki/topics/슬러그/슬러그.md
+      // 폴더 노트 구조 검증: wiki/주제/슬러그/슬러그.md
       const expectedFile = path.join(folderPath, `${slug}.md`);
       if (!fs.existsSync(expectedFile)) {
         this.logError(
-          `wiki/topics/${slug}`,
+          `wiki/주제/${slug}`,
           `파일 '${slug}.md' 없음 (폴더 노트 구조 필요)`
         );
       } else {
@@ -266,7 +266,7 @@ class WikiLinter {
       for (const file of files) {
         if (file.endsWith('.md') && file !== `${slug}.md` && file !== 'index.md') {
           this.logWarning(
-            `wiki/topics/${slug}/${file}`,
+            `wiki/주제/${slug}/${file}`,
             '폴더명과 일치하지 않는 파일명'
           );
         }
@@ -323,18 +323,18 @@ class WikiLinter {
     }
 
     // 토픽 폴더와 index의 링크 일치 확인
-    const topicsDir = path.join(this.wikiRoot, 'wiki', 'topics');
-    if (fs.existsSync(topicsDir)) {
-      const topics = fs
-        .readdirSync(topicsDir)
-        .filter((f) => fs.statSync(path.join(topicsDir, f)).isDirectory());
+    const 주제Dir = path.join(this.wikiRoot, 'wiki', '주제');
+    if (fs.existsSync(주제Dir)) {
+      const 주제 = fs
+        .readdirSync(주제Dir)
+        .filter((f) => fs.statSync(path.join(주제Dir, f)).isDirectory());
 
       try {
         const content = fs.readFileSync(indexFile, 'utf-8');
 
-        for (const topic of topics) {
+        for (const topic of 주제) {
           // index에 해당 토픽이 링크되어 있는지 확인
-          if (!content.includes(`topics/${topic}/`)) {
+          if (!content.includes(`주제/${topic}/`)) {
             this.logWarning(
               'wiki/index.md',
               `토픽 '${topic}'이 index에 없음 (고아 페이지)`
