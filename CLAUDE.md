@@ -44,7 +44,7 @@ raw/
 - 추천 구조: `_templates/topic-page.template.md` 참조.
 
 ### 롤업 페이지 (자동 합성 뷰)
-- `wiki/decisions/decisions.md`: 모든 주제 페이지에서 결정사항을 롤업.
+- `wiki/결정/결정.md`: 모든 주제 페이지에서 결정사항을 롤업.
 - `wiki/액션아이템/액션아이템.md`: 모든 회의에서 액션아이템을 체크박스 리스트로 롤업.
 - 이 둘은 ingest 절차의 부산물로 계속 갱신됨. **반드시 매 ingest마다 동시 갱신 필수**.
 
@@ -52,8 +52,8 @@ raw/
 주제 페이지 위치: `wiki/topics/슬러그/슬러그.md` 기준
 - **raw 참조**: `../../../raw/YYYY-MM-DD_슬러그/meta.md` (3단계 상향)
 - **형제 토픽 링크**: `../다른-슬러그/다른-슬러그.md` (같은 topics/ 내)
-- **결정 롤업 링크** (decisions.md에서): `../topics/슬러그/슬러그.md`
-- **액션아이템 링크** (action-items.md에서): `../../raw/YYYY-MM-DD_슬러그/meta.md`
+- **결정 롤업 링크** (결정.md에서): `../topics/슬러그/슬러그.md`
+- **액션아이템 링크** (액션아이템.md에서): `../../raw/YYYY-MM-DD_슬러그/meta.md`
 
 **중요**: 링크 깊이를 섞어서 쓰지 말 것. raw는 항상 3단계, 형제 토픽은 항상 상대경로로 통일.
 
@@ -93,7 +93,7 @@ raw/
 
 5. **결정사항 롤업**
    - 새 결정사항이 있으면 주제 페이지에 먼저 작성한 후, 
-     `wiki/decisions/decisions.md`에도 동시에 반영.
+     `wiki/결정/결정.md`에도 동시에 반영.
    - **rule**: ingest 후 decisions.md 갱신 누락 시 SSOT 깨짐. 필수.
 
 6. **액션아이템 롤업**
@@ -187,7 +187,7 @@ ingest 완료 전 다음을 반드시 확인:
 - ingest 완료 전 모든 신규 링크 검증 (깨진 링크 허용 안 함)
 
 **업데이트**
-- ingest 후 반드시 `wiki/decisions/decisions.md` 갱신
+- ingest 후 반드시 `wiki/결정/결정.md` 갱신
 - ingest 후 반드시 `wiki/액션아이템/액션아이템.md` 갱신
 - 기존 내용과 모순되면, 지우지 말고 변경 이력 남기기: "2026-08-10 변경: 이전 X → 현재 Y ([링크])"
 - `log.md`에 `[INGEST]` 항목 추가
@@ -211,7 +211,7 @@ ingest 완료 전 다음을 반드시 확인:
 - 정정이 필요하면 주제 페이지에 각주로 "역정정" 남기기
 
 **업데이트**
-- ingest 후 decisions.md, 액션아이템.md 갱신 누락 (SSOT 깨짐)
+- ingest 후 결정.md, 액션아이템.md 갱신 누락 (SSOT 깨짐)
 - 신규 토픽 생성했는데 index.md에 등록 안 함 (고아 페이지 생성)
 
 **동시성**

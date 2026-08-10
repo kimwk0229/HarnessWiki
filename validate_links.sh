@@ -36,23 +36,23 @@ echo ""
 
 # 형제 토픽 링크 확인
 echo "2. 형제 토픽 링크 검증"
-echo "   대상: decisions.md, wiki/topics 내 모든 파일"
+echo "   대상: 결정.md, wiki/topics 내 모든 파일"
 topic_link_issues=0
 
-# decisions.md의 토픽 링크 확인
-if [ -f wiki/decisions/decisions.md ]; then
+# 결정.md의 토픽 링크 확인
+if [ -f wiki/결정/결정.md ]; then
   while IFS= read -r line; do
     if [[ $line =~ \(\.\./topics/ ]]; then
       topic_name=$(echo "$line" | grep -oP '(?<=topics/)[^/]+' | head -1)
       if [ -n "$topic_name" ]; then
         if [ ! -f "wiki/topics/$topic_name/$topic_name.md" ]; then
-          echo "   ✗ 깨진 링크 (decisions.md): $line"
+          echo "   ✗ 깨진 링크 (결정.md): $line"
           ((broken_links++))
           ((topic_link_issues++))
         fi
       fi
     fi
-  done < wiki/decisions/decisions.md
+  done < wiki/결정/결정.md
 fi
 
 # wiki/topics 내 파일들의 형제 토픽 링크 확인
