@@ -8,6 +8,10 @@
 
 # Claude Code
 .claude/
+# 예외: ingest 스킬은 커밋
+!.claude/skills/
+!.claude/skills/ingest/
+!.claude/skills/ingest/**
 
 # Obsidian
 .obsidian/

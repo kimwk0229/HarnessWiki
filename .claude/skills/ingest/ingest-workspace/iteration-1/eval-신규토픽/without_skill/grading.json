@@ -1,0 +1,41 @@
+{
+  "eval_id": 1,
+  "eval_name": "신규_토픽_생성_및_완전_ingest",
+  "expectations": [
+    {
+      "text": "raw 파일 생성 (raw.md, meta.md)",
+      "passed": true,
+      "evidence": "raw/2026-08-15_모바일-앱/ 디렉토리 생성, 두 파일 모두 작성됨"
+    },
+    {
+      "text": "폴더 노트 구조로 토픽 페이지 생성",
+      "passed": true,
+      "evidence": "wiki/topics/모바일-앱/모바일-앱.md 생성, 폴더 노트 구조 준수"
+    },
+    {
+      "text": "index.md에 신규 토픽 등록",
+      "passed": true,
+      "evidence": "제품 개발 섹션에 모바일-앱 추가"
+    },
+    {
+      "text": "decisions.md와 action-items.md 동시 갱신",
+      "passed": true,
+      "evidence": "3개 결정사항 및 3개 액션아이템 추가"
+    },
+    {
+      "text": "모든 링크 유효성 검증 (깨진 링크 0건)",
+      "passed": true,
+      "evidence": "모든 주요 파일 경로 확인, 링크 유효성 검증 완료"
+    },
+    {
+      "text": "meta.md에 제목/날짜/자료유형/요약 완전히 포함",
+      "passed": true,
+      "evidence": "제목, 일시, 참석자, 자료유형, 한줄 요약 모두 포함"
+    },
+    {
+      "text": "log.md에 [INGEST] 항목 기록",
+      "passed": true,
+      "evidence": "[INGEST] 항목 자동 추가"
+    }
+  ]
+}

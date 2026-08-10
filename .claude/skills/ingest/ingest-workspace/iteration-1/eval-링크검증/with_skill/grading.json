@@ -1,0 +1,36 @@
+{
+  "eval_id": 3,
+  "eval_name": "링크_경로_검증_및_오류_처리",
+  "expectations": [
+    {
+      "text": "깨진 링크 0건 (존재하지 않는 파일 참조 없음)",
+      "passed": true,
+      "evidence": "106개 링크 모두 유효한 파일 참조. 깨진 링크 0건"
+    },
+    {
+      "text": "깊이 불일치 0건 (raw 3단계, 형제 상대경로)",
+      "passed": true,
+      "evidence": "모든 raw 참조 3단계 정확, 형제 토픽 상대경로 일관"
+    },
+    {
+      "text": "Obsidian [[위키링크]] 사용 0건",
+      "passed": true,
+      "evidence": "마크다운 표준 링크만 사용. Obsidian 위키링크 미검출"
+    },
+    {
+      "text": "모든 raw 참조가 ../../../raw/ 형식 (3단계 일관성)",
+      "passed": true,
+      "evidence": "wiki/topics/ 기준 모든 raw 참조가 3단계 깊이 준수"
+    },
+    {
+      "text": "모든 형제 토픽 링크가 ../slug/slug.md 형식",
+      "passed": true,
+      "evidence": "43개 형제 토픽 링크 모두 형식 준수"
+    },
+    {
+      "text": "링크 검증 리포트 생성 (깨진/깊이/위키링크 각 0건)",
+      "passed": true,
+      "evidence": "comprehensive validation report 생성, 모든 기준 통과"
+    }
+  ]
+}

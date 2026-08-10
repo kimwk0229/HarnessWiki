@@ -1,0 +1,41 @@
+{
+  "eval_id": 2,
+  "eval_name": "기존_토픽_갱신_및_모순_처리",
+  "expectations": [
+    {
+      "text": "raw.md/meta.md 생성",
+      "passed": true,
+      "evidence": "raw/2026-08-20_제품주간회의/raw.md (1064 bytes), meta.md (553 bytes) 생성"
+    },
+    {
+      "text": "기존 토픽 갱신 (결제-연동, 정산-주기)",
+      "passed": true,
+      "evidence": "두 토픽 모두 2026-08-20 정보로 갱신됨"
+    },
+    {
+      "text": "모순 처리: 변경이력 기록 (지우지 않음)",
+      "passed": true,
+      "evidence": "2026-07-23 목표(8월 13일) → 2026-08-20(8월 25일) 변경을 명시적 노트로 기록. 기존 블록 유지"
+    },
+    {
+      "text": "결정사항 append-only (신규 블록만 추가)",
+      "passed": true,
+      "evidence": "2026-08-20 신규 블록 추가, 기존 블록은 수정되지 않음"
+    },
+    {
+      "text": "decisions.md/action-items.md 갱신",
+      "passed": true,
+      "evidence": "각 4개, 2개 항목 추가. 모든 링크 유효"
+    },
+    {
+      "text": "모든 정보에 근거 회의 링크 포함",
+      "passed": true,
+      "evidence": "모든 정보가 2026-08-20 회의 meta.md로 돌아가는 링크 포함"
+    },
+    {
+      "text": "링크 경로 깊이 일관성 (3단계 raw, 상대경로 형제)",
+      "passed": true,
+      "evidence": "../../../raw/2026-08-20_제품주간회의/meta.md (3단계), ../정산-주기/정산-주기.md (상대경로)"
+    }
+  ]
+}

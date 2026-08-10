@@ -1,0 +1,35 @@
+{
+  "eval_id": 2,
+  "eval_name": "기존_토픽_갱신_및_모순_처리",
+  "prompt": "2026-08-20 제품 주간회의 메모를 받았습니다. 결제-연동과 정산-주기 토픽을 갱신하되, 모순을 적절히 처리하세요.",
+  "assertions": [
+    {
+      "name": "raw_files_created",
+      "description": "raw/2026-08-20_제품주간회의/ 디렉토리 생성"
+    },
+    {
+      "name": "existing_topic_updated",
+      "description": "기존 결제-연동, 정산-주기 토픽이 갱신되었는지 확인"
+    },
+    {
+      "name": "contradiction_handled",
+      "description": "8월 15일 → 8월 25일 일정 변경이 변경이력으로 기록되었는지 확인 (지우지 않음, 역사 추적)"
+    },
+    {
+      "name": "decision_blocks_appended",
+      "description": "결정사항 섹션에 신규 날짜 블록(2026-08-20)이 append-only 방식으로 추가되었는지 확인"
+    },
+    {
+      "name": "rollups_updated",
+      "description": "decisions.md와 action-items.md 갱신 여부"
+    },
+    {
+      "name": "links_valid",
+      "description": "모든 링크 경로가 유효한지 확인 (3단계 깊이, 상대경로)"
+    },
+    {
+      "name": "source_references",
+      "description": "모든 정보에 근거 회의 링크가 포함되었는지 확인"
+    }
+  ]
+}

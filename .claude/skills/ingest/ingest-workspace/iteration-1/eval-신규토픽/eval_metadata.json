@@ -1,0 +1,35 @@
+{
+  "eval_id": 1,
+  "eval_name": "신규_토픽_생성_및_완전_ingest",
+  "prompt": "2026-08-15 새로운 '모바일 앱 프로젝트' 회의 메모를 받았습니다. ingest를 완료해주세요.",
+  "assertions": [
+    {
+      "name": "raw_files_created",
+      "description": "raw/2026-08-15_모바일앱/ 디렉토리와 raw.md, meta.md 파일 생성 여부"
+    },
+    {
+      "name": "topic_folder_created",
+      "description": "wiki/topics/모바일-앱/모바일-앱.md 폴더 노트 구조 생성 여부"
+    },
+    {
+      "name": "index_registered",
+      "description": "index.md에 모바일-앱 토픽 등록 여부"
+    },
+    {
+      "name": "rollups_updated",
+      "description": "decisions.md와 action-items.md가 새 항목으로 갱신되었는지 확인"
+    },
+    {
+      "name": "links_validated",
+      "description": "모든 신규 링크가 유효한지 확인 (깨진 링크 0건)"
+    },
+    {
+      "name": "log_recorded",
+      "description": "log.md에 [INGEST] 항목이 기록되었는지 확인"
+    },
+    {
+      "name": "metadata_completeness",
+      "description": "meta.md에 제목/날짜/자료유형/한줄요약이 모두 포함되었는지 확인"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "eval_id": 2,
+  "eval_name": "기존_토픽_갱신_및_모순_처리",
+  "expectations": [
+    {
+      "text": "raw.md/meta.md 생성",
+      "passed": true,
+      "evidence": "raw/2026-08-20_제품주간회의/ 디렉토리 및 파일 생성"
+    },
+    {
+      "text": "기존 토픽 갱신 (결제-연동, 정산-주기)",
+      "passed": true,
+      "evidence": "두 토픽 모두 현황 및 결정사항 갱신"
+    },
+    {
+      "text": "모순 처리: 변경이력 기록 (지우지 않음)",
+      "passed": true,
+      "evidence": "2026-07-23 블록에 ⚠️ 모순 노트 추가 (기존 내용 유지)"
+    },
+    {
+      "text": "결정사항 append-only (신규 블록만 추가)",
+      "passed": true,
+      "evidence": "2026-08-20 신규 블록 추가, append-only 준수"
+    },
+    {
+      "text": "decisions.md/action-items.md 갱신",
+      "passed": true,
+      "evidence": "2026-08-20 섹션 신설, 항목 추가"
+    },
+    {
+      "text": "모든 정보에 근거 회의 링크 포함",
+      "passed": true,
+      "evidence": "변경이력에 회의 링크 명시"
+    },
+    {
+      "text": "링크 경로 깊이 일관성 (3단계 raw, 상대경로 형제)",
+      "passed": true,
+      "evidence": "CLAUDE.md 규칙 완벽 준수"
+    }
+  ]
+}

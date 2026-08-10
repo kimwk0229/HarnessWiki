@@ -1,0 +1,31 @@
+{
+  "eval_id": 3,
+  "eval_name": "링크_경로_검증_및_오류_처리",
+  "prompt": "전체 wiki의 링크를 검증해주세요. check_links.py를 사용하여 깨진 링크, 깊이 불일치, Obsidian 위키링크를 탐지하세요.",
+  "assertions": [
+    {
+      "name": "no_broken_links",
+      "description": "깨진 링크 0건 (존재하지 않는 파일 참조 없음)"
+    },
+    {
+      "name": "no_depth_mismatch",
+      "description": "깊이 불일치 0건 (raw는 3단계, 형제는 상대경로)"
+    },
+    {
+      "name": "no_obsidian_links",
+      "description": "Obsidian [[위키링크]] 사용 0건"
+    },
+    {
+      "name": "raw_depth_consistency",
+      "description": "모든 raw 참조가 ../../../raw/ 형식인지 확인 (깊이 3단계 일관성)"
+    },
+    {
+      "name": "topic_link_format",
+      "description": "모든 형제 토픽 링크가 ../slug/slug.md 형식인지 확인"
+    },
+    {
+      "name": "validation_report",
+      "description": "링크 검증 리포트 생성 (요약: 깨진 링크/깊이 불일치/위키링크 각 0건)"
+    }
+  ]
+}
