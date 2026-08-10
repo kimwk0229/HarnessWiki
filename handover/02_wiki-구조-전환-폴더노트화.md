@@ -54,11 +54,11 @@ wiki/topics/정산-주기/정산-주기.md
 - 토픽 페이지로의 모든 링크 깊이 조정
 
 #### wiki/action-items/action-items.md (11개 링크)
-- 예: `../sources/2026-07-23-제품주간회의/meta.md` → `../../sources/2026-07-23-제품주간회의/meta.md`
-- sources/ 링크가 한 단계 더 깊어짐
+- 예: `../raw/2026-07-23-제품주간회의/meta.md` → `../../raw/2026-07-23-제품주간회의/meta.md`
+- raw/ 링크가 한 단계 더 깊어짐
 
 #### wiki/topics/X/X.md (각 토픽, 총 ~20개 링크)
-- sources 링크: `../../sources/...` → `../../../sources/...`
+- raw 링크: `../../raw/...` → `../../../raw/...`
 - 형제 토픽 링크: `./로드맵.md` → `../로드맵/로드맵.md`
 
 ### 3단계: 스키마 문서 갱신
@@ -66,11 +66,11 @@ wiki/topics/정산-주기/정산-주기.md
 #### CLAUDE.md
 - **라인 41**: `wiki/topics/슬러그.md` → `wiki/topics/슬러그/슬러그.md` (폴더 노트 구조 명시)
 - **라인 47-48**: `wiki/decisions.md` → `wiki/decisions/decisions.md`, `wiki/action-items.md` → `wiki/action-items/action-items.md`
-- **라인 88**: 액션아이템 롤업 링크 경로 갱신 (`../../sources/...` → `../../../sources/...`)
+- **라인 88**: 액션아이템 롤업 링크 경로 갱신 (`../../raw/...` → `../../../raw/...`)
 
 #### _templates/topic-page.template.md
-- **라인 15, 18**: sources 링크 예시 깊이 조정 (`../../sources/` → `../../../sources/`)
-- **라인 27**: sources 링크 예시 깊이 조정
+- **라인 15, 18**: raw 링크 예시 깊이 조정 (`../../raw/` → `../../../raw/`)
+- **라인 27**: raw 링크 예시 깊이 조정
 - **라인 40-42**: 토픽 간 링크 및 롤업 링크 예시 갱신
   - `../topics/다른-주제.md` → `../다른-주제/다른-주제.md`
   - `../decisions.md` → `../../decisions/decisions.md`
@@ -100,7 +100,7 @@ wiki/topics/정산-주기/정산-주기.md
 - `log.md`
 
 ### 변경되지 않은 파일
-- `sources/` 내 모든 파일 (sources/에서 wiki/로 가는 링크 없음)
+- `raw/` 내 모든 파일 (raw/에서 wiki/로 가는 링크 없음)
 - `handover/` (이 문서 제외)
 
 ---
@@ -114,8 +114,8 @@ wiki/topics/정산-주기/정산-주기.md
 ✅ **링크 검증**
 - index.md: 8개 링크 (모두 `wiki/topics/X/X.md`, `wiki/decisions/decisions.md`, `wiki/action-items/action-items.md` 형태)
 - decisions.md: 17개 토픽 링크 (모두 `../topics/X/X.md` 형태)
-- action-items.md: 11개 sources 링크 (모두 `../../sources/...` 형태)
-- 각 토픽 페이지: sources 링크 `../../../sources/...`, 형제 토픽 링크 `../X/X.md` 형태
+- action-items.md: 11개 raw 링크 (모두 `../../raw/...` 형태)
+- 각 토픽 페이지: raw 링크 `../../../raw/...`, 형제 토픽 링크 `../X/X.md` 형태
 
 ---
 
@@ -125,13 +125,13 @@ wiki/topics/정산-주기/정산-주기.md
 신규 회의를 추가할 때, LLM(Claude)은 이제 **자동으로** 다음 구조로 페이지를 생성합니다:
 - 새 토픽 페이지: `wiki/topics/새-슬러그/새-슬러그.md`
 - 기존 토픽 갱신: 같은 폴더 내 파일 편집
-- 링크: `../../../sources/...` (sources 참조), `../다른-토픽/다른-토픽.md` (형제 토픽 참조)
+- 링크: `../../../raw/...` (raw 참조), `../다른-토픽/다른-토픽.md` (형제 토픽 참조)
 
 ### 주의사항
 1. **새 토픽 페이지 생성 시** index.md에 `wiki/topics/새-슬러그/새-슬러그.md` 형태로 링크 추가
    - 이전처럼 `wiki/topics/새-슬러그.md` 형태로 하지 말 것
 2. **토픽 간 내부 링크**: `../슬러그/슬러그.md` 형태 (같은 topics/ 폴더 내 형제)
-3. **sources 참조 시**: `../../../sources/YYYY-MM-DD-슬러그/meta.md` 형태 (3단계 상향)
+3. **raw 참조 시**: `../../../raw/YYYY-MM-DD-슬러그/meta.md` 형태 (3단계 상향)
 
 ### CLAUDE.md는 최신 스키마 반영
 - `CLAUDE.md`는 이미 새 구조를 문서화했으므로, LLM이 다음 회의 수집 시 참고하면 됨

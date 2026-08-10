@@ -28,10 +28,10 @@ HarnessWiki는 회의록 기반 SSOT 위키다.
 
 ## 원본 보관소
 
-회의 원본은 `sources/` 폴더에 날짜순으로 보관됩니다.
+회의 원본은 `raw/` 폴더에 날짜순으로 보관됩니다.
 각 회의는 다음 구조를 가집니다:
-- `sources/YYYY-MM-DD_슬러그/raw.md` — 회의 원문 (절대 수정 금지)
-- `sources/YYYY-MM-DD_슬러그/meta.md` — 회의 메타카드 (제목/일시/참석자/자료유형/링크)
+- `raw/YYYY-MM-DD_슬러그/raw.md` — 회의 원문 (절대 수정 금지)
+- `raw/YYYY-MM-DD_슬러그/meta.md` — 회의 메타카드 (제목/일시/참석자/자료유형/링크)
 
 시간순 활동 이력은 [log.md](log.md)를 참고하세요.
 
