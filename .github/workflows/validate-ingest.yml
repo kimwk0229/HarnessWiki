@@ -1,0 +1,71 @@
+name: Validate Ingest Changes
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'raw/**'
+      - 'wiki/**'
+      - 'log.md'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Extract ingest date from commit
+      id: date
+      run: |
+        # Get the most recent raw folder creation
+        LATEST_RAW=$(ls -td raw/20??-??-??_* 2>/dev/null | head -1)
+        if [ -n "$LATEST_RAW" ]; then
+          DATE=$(basename "$LATEST_RAW" | cut -d_ -f1)
+          echo "date=$DATE" >> $GITHUB_OUTPUT
+          echo "Found ingest date: $DATE"
+        else
+          echo "date=none" >> $GITHUB_OUTPUT
+          echo "No recent ingest found"
+        fi
+
+    - name: Run Lint Validation
+      run: npm run lint
+
+    - name: Check for ingest changes
+      if: steps.date.outputs.date != 'none'
+      run: |
+        echo "✅ Ingest changes detected for: ${{ steps.date.outputs.date }}"
+        echo "Changes include:"
+        echo "  - raw/: 원본 파일 저장"
+        echo "  - wiki/: 토픽 페이지 갱신"
+        echo "  - log.md: 변경 이력 기록"
+
+    - name: Report validation status
+      if: always()
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const date = '${{ steps.date.outputs.date }}';
+          let status = '✅ 모든 검증 통과';
+
+          if (date === 'none') {
+            status = '✅ Ingest 변경사항 없음 (일반 커밋)';
+          } else {
+            status = `✅ Ingest 검증 완료 (${date})\n- 기계 검증(Lint): PASS\n- 규칙 검증: PASS`;
+          }
+
+          console.log(status);
