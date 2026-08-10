@@ -69,7 +69,7 @@
 - 강태우 계약조건 항목 근거 명확화
 
 ### Changed
-- decisions.md, action-items.md, 각 토픽 페이지 링크 경로 갱신
+- decisions.md, 액션아이템.md, 각 토픽 페이지 링크 경로 갱신
 
 ---
 
@@ -94,7 +94,7 @@
 
 ### Affected Files
 - wiki/decisions/decisions.md (이동)
-- wiki/action-items/action-items.md (이동)
+- wiki/액션아이템/액션아이템.md (이동)
 - wiki/topics/{결제-연동, 대시보드-개편, 로드맵, 온보딩-개선, 정산-주기}/ (전환)
 - index.md (링크 갱신)
 - CLAUDE.md (구조 문서화)
@@ -132,7 +132,7 @@
   - 정산-주기 (정책 미정)
 
 - wiki/decisions/decisions.md: 결정사항 롤업 (23개)
-- wiki/action-items/action-items.md: 액션아이템 롤업 (완료 5건, 미완료 12건)
+- wiki/액션아이템/액션아이템.md: 액션아이템 롤업 (완료 5건, 미완료 12건)
 
 ---
 

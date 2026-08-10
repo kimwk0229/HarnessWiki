@@ -45,7 +45,7 @@ raw/
 
 ### 롤업 페이지 (자동 합성 뷰)
 - `wiki/decisions/decisions.md`: 모든 주제 페이지에서 결정사항을 롤업.
-- `wiki/action-items/action-items.md`: 모든 회의에서 액션아이템을 체크박스 리스트로 롤업.
+- `wiki/액션아이템/액션아이템.md`: 모든 회의에서 액션아이템을 체크박스 리스트로 롤업.
 - 이 둘은 ingest 절차의 부산물로 계속 갱신됨. **반드시 매 ingest마다 동시 갱신 필수**.
 
 ### 링크 규칙 (경로 깊이)
@@ -97,7 +97,7 @@ raw/
    - **rule**: ingest 후 decisions.md 갱신 누락 시 SSOT 깨짐. 필수.
 
 6. **액션아이템 롤업**
-   - 새 액션아이템이 있으면 `wiki/action-items/action-items.md`에 체크박스 형태로 추가.
+   - 새 액션아이템이 있으면 `wiki/액션아이템/액션아이템.md`에 체크박스 형태로 추가.
    - 형식: `- [ ] 내용 (담당자, 기한 if 있으면 자유 형식) — 출처: [회의명](../../raw/YYYY-MM-DD_슬러그/meta.md)`
    - 강제 필드 아님. 담당자/기한이 없으면 그냥 "- [ ] 내용"도 가능.
    - **rule**: ingest 후 action-items.md 갱신 누락 시 SSOT 깨짐. 필수.
@@ -123,7 +123,7 @@ ingest 완료 전 다음을 반드시 확인:
 - [ ] 모든 링크 경로 검증 (raw: `../../../raw/`, 형제 토픽: `../슬러그/슬러그.md`)
 - [ ] 신규 토픽이면 `index.md`에 등록
 - [ ] `wiki/decisions/decisions.md` 동시 갱신
-- [ ] `wiki/action-items/action-items.md` 동시 갱신
+- [ ] `wiki/액션아이템/액션아이템.md` 동시 갱신
 - [ ] `log.md`에 `[INGEST]` 항목 추가
 - [ ] 생성/갱신된 파일 목록을 사용자에게 보고
 
@@ -188,7 +188,7 @@ ingest 완료 전 다음을 반드시 확인:
 
 **업데이트**
 - ingest 후 반드시 `wiki/decisions/decisions.md` 갱신
-- ingest 후 반드시 `wiki/action-items/action-items.md` 갱신
+- ingest 후 반드시 `wiki/액션아이템/액션아이템.md` 갱신
 - 기존 내용과 모순되면, 지우지 말고 변경 이력 남기기: "2026-08-10 변경: 이전 X → 현재 Y ([링크])"
 - `log.md`에 `[INGEST]` 항목 추가
 
@@ -211,7 +211,7 @@ ingest 완료 전 다음을 반드시 확인:
 - 정정이 필요하면 주제 페이지에 각주로 "역정정" 남기기
 
 **업데이트**
-- ingest 후 decisions.md, action-items.md 갱신 누락 (SSOT 깨짐)
+- ingest 후 decisions.md, 액션아이템.md 갱신 누락 (SSOT 깨짐)
 - 신규 토픽 생성했는데 index.md에 등록 안 함 (고아 페이지 생성)
 
 **동시성**

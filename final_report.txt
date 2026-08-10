@@ -11,7 +11,7 @@ HarnessWiki 링크 검증 완료 리포트
 
 마크다운 파일 수: 8개
 - wiki/decisions/decisions.md
-- wiki/action-items/action-items.md
+- wiki/액션아이템/액션아이템.md
 - wiki/topics/결제-연동/결제-연동.md (5개 주제 페이지)
 - wiki/topics/정산-주기/정산-주기.md
 - wiki/topics/대시보드-개편/대시보드-개편.md
@@ -27,7 +27,7 @@ HarnessWiki 링크 검증 완료 리포트
 
 링크 형식별 분류:
 - Raw 메타 링크 (2단계 상향): 17개
-  * 위치: wiki/action-items/, wiki/decisions/
+  * 위치: wiki/액션아이템/, wiki/decisions/
   * 형식: ../../raw/YYYY-MM-DD_슬러그/meta.md ✓
 
 - Raw 메타 링크 (3단계 상향): 34개
@@ -40,7 +40,7 @@ HarnessWiki 링크 검증 완료 리포트
 
 - 기타 구조적 링크: 2개
   * 위치: wiki/topics/모바일-앱/모바일-앱.md
-  * 형식: ../../decisions/, ../../action-items/ ✓
+  * 형식: ../../decisions/, ../../액션아이템/ ✓
 
 ================================================================================
 3. 검증 결과
@@ -57,7 +57,7 @@ HarnessWiki 링크 검증 완료 리포트
     * 2026-07-23_제품주간회의/meta.md
 
 ✓ 링크 깊이 불일치: 0개
-  - Raw 참조: 모두 3단계(주제 페이지) 또는 2단계(decisions/action-items) ✓
+  - Raw 참조: 모두 3단계(주제 페이지) 또는 2단계(decisions/액션아이템) ✓
   - 형제 토픽 링크: 모두 올바른 상대경로 ✓
 
 ✓ Obsidian 위키링크: 0개
@@ -83,7 +83,7 @@ HarnessWiki 링크 검증 완료 리포트
     ../../../raw/YYYY-MM-DD_슬러그/meta.md 형식 준수
 
 ✓ 형제 토픽 상대경로 일관성
-  - decisions.md, action-items.md, 주제 페이지 간 모든 상호링크가
+  - decisions.md, 액션아이템.md, 주제 페이지 간 모든 상호링크가
     상대경로 ../ 형식 준수
 
 ✓ 폴더 노트 구조

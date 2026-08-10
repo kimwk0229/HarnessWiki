@@ -16,7 +16,7 @@ HarnessWiki의 `wiki/` 디렉토리를 **평면 구조 → 폴더 노트(folder 
 |---|---|---|
 | 토픽 페이지 | `wiki/topics/슬러그.md` | `wiki/topics/슬러그/슬러그.md` |
 | 결정사항 롤업 | `wiki/decisions.md` | `wiki/decisions/decisions.md` |
-| 액션아이템 롤업 | `wiki/action-items.md` | `wiki/action-items/action-items.md` |
+| 액션아이템 롤업 | `wiki/액션아이템.md` | `wiki/액션아이템/액션아이템.md` |
 | Obsidian 네비게이션 | 파일만 가능 | 폴더+파일 동시 표현 가능 (폴더 클릭 → 해당 페이지 열림) |
 
 ---
@@ -28,7 +28,7 @@ HarnessWiki의 `wiki/` 디렉토리를 **평면 구조 → 폴더 노트(folder 
 새 폴더를 생성하고 파일을 이동:
 
 ```
-wiki/action-items/action-items.md
+wiki/액션아이템/액션아이템.md
 wiki/decisions/decisions.md
 wiki/topics/결제-연동/결제-연동.md
 wiki/topics/대시보드-개편/대시보드-개편.md
@@ -47,13 +47,13 @@ wiki/topics/정산-주기/정산-주기.md
 - `wiki/topics/온보딩-개선.md` → `wiki/topics/온보딩-개선/온보딩-개선.md`
 - (기타 6개 토픽 페이지)
 - `wiki/decisions.md` → `wiki/decisions/decisions.md`
-- `wiki/action-items.md` → `wiki/action-items/action-items.md`
+- `wiki/액션아이템.md` → `wiki/액션아이템/액션아이템.md`
 
 #### wiki/decisions/decisions.md (17개 링크)
 - 예: `./topics/결제-연동.md` → `../topics/결제-연동/결제-연동.md`
 - 토픽 페이지로의 모든 링크 깊이 조정
 
-#### wiki/action-items/action-items.md (11개 링크)
+#### wiki/액션아이템/액션아이템.md (11개 링크)
 - 예: `../raw/2026-07-23-제품주간회의/meta.md` → `../../raw/2026-07-23-제품주간회의/meta.md`
 - raw/ 링크가 한 단계 더 깊어짐
 
@@ -65,7 +65,7 @@ wiki/topics/정산-주기/정산-주기.md
 
 #### CLAUDE.md
 - **라인 41**: `wiki/topics/슬러그.md` → `wiki/topics/슬러그/슬러그.md` (폴더 노트 구조 명시)
-- **라인 47-48**: `wiki/decisions.md` → `wiki/decisions/decisions.md`, `wiki/action-items.md` → `wiki/action-items/action-items.md`
+- **라인 47-48**: `wiki/decisions.md` → `wiki/decisions/decisions.md`, `wiki/액션아이템.md` → `wiki/액션아이템/액션아이템.md`
 - **라인 88**: 액션아이템 롤업 링크 경로 갱신 (`../../raw/...` → `../../../raw/...`)
 
 #### _templates/topic-page.template.md
@@ -74,7 +74,7 @@ wiki/topics/정산-주기/정산-주기.md
 - **라인 40-42**: 토픽 간 링크 및 롤업 링크 예시 갱신
   - `../topics/다른-주제.md` → `../다른-주제/다른-주제.md`
   - `../decisions.md` → `../../decisions/decisions.md`
-  - `../action-items.md` → `../../action-items/action-items.md`
+  - `../액션아이템.md` → `../../액션아이템/액션아이템.md`
 
 #### log.md
 - 구조 전환 작업을 `[REFACTOR]` 태그로 기록
@@ -86,7 +86,7 @@ wiki/topics/정산-주기/정산-주기.md
 ### 변경된 파일 (9개)
 - `index.md`
 - `wiki/decisions/decisions.md`
-- `wiki/action-items/action-items.md`
+- `wiki/액션아이템/액션아이템.md`
 - `wiki/topics/결제-연동/결제-연동.md`
 - `wiki/topics/대시보드-개편/대시보드-개편.md`
 - `wiki/topics/로드맵/로드맵.md`
@@ -112,9 +112,9 @@ wiki/topics/정산-주기/정산-주기.md
 - 옛 평면 경로 패턴 0개 (완전히 제거됨)
 
 ✅ **링크 검증**
-- index.md: 8개 링크 (모두 `wiki/topics/X/X.md`, `wiki/decisions/decisions.md`, `wiki/action-items/action-items.md` 형태)
+- index.md: 8개 링크 (모두 `wiki/topics/X/X.md`, `wiki/decisions/decisions.md`, `wiki/액션아이템/액션아이템.md` 형태)
 - decisions.md: 17개 토픽 링크 (모두 `../topics/X/X.md` 형태)
-- action-items.md: 11개 raw 링크 (모두 `../../raw/...` 형태)
+- 액션아이템.md: 11개 raw 링크 (모두 `../../raw/...` 형태)
 - 각 토픽 페이지: raw 링크 `../../../raw/...`, 형제 토픽 링크 `../X/X.md` 형태
 
 ---

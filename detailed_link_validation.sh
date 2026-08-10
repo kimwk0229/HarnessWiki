@@ -14,7 +14,7 @@ while IFS= read -r line; do
   if [[ $line =~ \(../../raw/ ]]; then
     ((count++))
   fi
-done < wiki/action-items/action-items.md
+done < wiki/액션아이템/액션아이템.md
 while IFS= read -r line; do
   if [[ $line =~ \(../../raw/ ]]; then
     ((count++))
@@ -54,8 +54,8 @@ done < wiki/decisions/decisions.md
 echo "   발견: $count개 (올바른 형식)"
 echo ""
 
-# 4. 다른 경로의 링크 (decisions, action-items)
-echo "4. 기타 구조적 링크 (../../decisions/, ../../action-items/ 등)"
+# 4. 다른 경로의 링크 (decisions, 액션아이템)
+echo "4. 기타 구조적 링크 (../../decisions/, ../../액션아이템/ 등)"
 count=0
 while IFS= read -r file; do
   while IFS= read -r line; do

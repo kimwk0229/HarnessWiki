@@ -39,7 +39,7 @@ updated: 2026-08-10
 
 - [다른 주제](../다른-주제/다른-주제.md)
 - [결정사항 롤업](../../decisions/decisions.md)
-- [액션아이템](../../action-items/action-items.md)
+- [액션아이템](../../액션아이템/액션아이템.md)
 
 ---
 

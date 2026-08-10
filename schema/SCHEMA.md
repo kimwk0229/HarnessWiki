@@ -19,8 +19,8 @@ HarnessWiki/
 │   │       └── 슬러그.md          # 폴더 노트 형식
 │   ├── decisions/
 │   │   └── decisions.md           # 결정사항 롤업
-│   └── action-items/
-│       └── action-items.md        # 액션아이템 롤업
+│   └── 액션아이템/
+│       └── 액션아이템.md          # 액션아이템 롤업
 │
 ├── schema/
 │   └── SCHEMA.md                  # 이 파일
